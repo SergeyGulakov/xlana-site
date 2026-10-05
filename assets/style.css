@@ -279,13 +279,17 @@ p{margin:0 0 1em}
 @media (max-width:640px){.price-list .pr{padding:18px;gap:14px}.price-list .pr span{font-size:15px}.price-list .pr b{font-size:28px}.adv-grid,.vid-grid.two,.temps .tgrid{grid-template-columns:1fr}.temps{padding:28px 22px;margin-top:40px}}
 
 /* 5 service cards; general contracting objects; MULTIPOR */
-.svc-grid{grid-template-columns:repeat(5,1fr)}
+/* 7 cards: 4 in the first row, 3 wider ones in the second */
+.svc-grid{grid-template-columns:repeat(12,1fr)}
+.svc-grid .svc{grid-column:span 3}
+.svc-grid .svc:nth-child(n+5){grid-column:span 4}
+.svc-grid .svc:nth-child(n+5) .ph{aspect-ratio:16/10}
 .sub-h{font-size:clamp(22px,2vw,28px);text-transform:uppercase;margin:0 0 24px}
-.obj-list{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--line);border:2px solid var(--line)}
+.obj-list{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:2px;background:var(--line);border:2px solid var(--line)}
 .obj-list span{background:var(--paper);padding:30px 28px;font-family:var(--display);font-size:24px;font-weight:500;text-transform:uppercase;line-height:1.15}
 .also{margin:48px 0 0;font-size:17px;color:var(--muted)}
-@media (max-width:1100px){.svc-grid{grid-template-columns:1fr 1fr}.svc-grid .svc:last-child:nth-child(odd){grid-column:span 2}.svc-grid .svc:last-child:nth-child(odd) .ph{aspect-ratio:16/9}.obj-list{grid-template-columns:1fr 1fr}}
-@media (max-width:640px){.svc-grid{grid-template-columns:1fr}.svc-grid .svc:last-child:nth-child(odd){grid-column:auto}.svc-grid .svc:last-child:nth-child(odd) .ph{aspect-ratio:4/3}.obj-list span{font-size:20px;padding:22px 20px}}
+@media (max-width:1100px){.svc-grid{grid-template-columns:1fr 1fr}.svc-grid .svc,.svc-grid .svc:nth-child(n+5){grid-column:auto}.svc-grid .svc:nth-child(n+5) .ph{aspect-ratio:4/5}.svc-grid .svc:last-child:nth-child(odd){grid-column:span 2}.svc-grid .svc:last-child:nth-child(odd) .ph{aspect-ratio:16/9}}
+@media (max-width:640px){.svc-grid{grid-template-columns:1fr}.svc-grid .svc:nth-child(n) .ph{aspect-ratio:4/3}.svc-grid .svc:last-child:nth-child(odd){grid-column:auto}.svc-grid .svc:last-child:nth-child(odd) .ph{aspect-ratio:4/3}.obj-list span{font-size:20px;padding:22px 20px}}
 
 /* trust strip, track record table, video language note, history */
 .trust{background:var(--ink);color:#fff;padding:0}
@@ -318,7 +322,7 @@ p{margin:0 0 1em}
 .split>*,.sub>*{min-width:0}
 .checks li{overflow-wrap:break-word}
 h1,h2,h3{overflow-wrap:break-word}
-@media (max-width:640px){h2{font-size:min(36px,9.4vw)}h2,h3{hyphens:auto;-webkit-hyphens:auto}}
+@media (max-width:640px){h2{font-size:min(36px,9.4vw)}h2,h3,.banner h1{hyphens:auto;-webkit-hyphens:auto}}
 /* three project cards: big one left, two stacked right */
 .prj-grid.three{grid-auto-rows:288px}
 .prj-grid.three .prj{height:auto}
