@@ -224,6 +224,34 @@ p{margin:0 0 1em}
 .foot .logo{color:#fff;display:inline-block;margin-bottom:18px}
 .foot .bottom{border-top:1px solid rgba(255,255,255,.1);margin-top:64px;padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-size:13px;opacity:.7}
 
+/* VT501 block (ventilation page) */
+.vt-img{width:100%;border-radius:var(--r);aspect-ratio:4/3;object-fit:cover;background:#ddd}
+.temps{margin-top:64px;background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:36px 40px}
+.temps .tgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:18px 0 20px}
+.temps .tgrid div{border-top:2px solid var(--navy);padding-top:14px}
+.temps .tgrid .hl{border-color:var(--accent)}
+.temps small{display:block;font-size:13px;letter-spacing:.06em;color:var(--muted)}
+.temps b{font-size:clamp(30px,3.4vw,46px);font-weight:300;line-height:1.2}
+.temps .hl b{color:var(--accent)}
+.temps p{margin:0;color:var(--muted);max-width:760px}
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.adv{border:1px solid var(--line);border-radius:var(--r);padding:30px;transition:transform .35s var(--ease),box-shadow .35s,border-color .35s}
+.adv:hover{transform:translateY(-4px);box-shadow:0 22px 50px -28px rgba(19,36,58,.35);border-color:transparent}
+.adv .num{font-size:13px;font-weight:700;color:var(--accent);letter-spacing:.15em}
+.adv h3{margin:10px 0 10px;font-size:20px}
+.adv p{margin:0;color:var(--muted);font-size:16px}
+.vid-grid.two{grid-template-columns:repeat(2,1fr)}
+.vt-price{margin:0 0 24px}.vt-price small{display:block;color:var(--muted);font-size:13px}.vt-price b{font-size:34px;font-weight:600}
+.src{margin:20px 0 0;font-size:13px;color:var(--muted)}
+.price-list{background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.price-list .pr{display:flex;justify-content:space-between;align-items:center;gap:24px;padding:22px 28px;border-top:1px solid var(--line);transition:background .25s}
+.price-list .pr:first-child{border-top:0}
+.price-list .pr:hover{background:var(--soft)}
+.price-list .pr span{font-size:17px}
+.price-list .pr b{font-size:26px;font-weight:600;color:var(--navy);white-space:nowrap}
+@media (max-width:1100px){.adv-grid{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.price-list .pr{padding:18px 18px;gap:14px}.price-list .pr span{font-size:15px}.price-list .pr b{font-size:21px}.adv-grid,.vid-grid.two,.temps .tgrid{grid-template-columns:1fr}.temps{padding:26px 22px;margin-top:40px}}
+
 /* appear on scroll (only with JS) */
 .js .rv{opacity:0;transform:translateY(28px);transition:opacity .8s var(--ease),transform .8s var(--ease)}
 .js .rv.in{opacity:1;transform:none}
